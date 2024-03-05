@@ -60,7 +60,9 @@ const AddProduct = () => {
       <form className="addproduct-form">
         <h1 className="addproduct-heading">Add Products</h1>
         <div className="addproduct-fields">
+          <label>Product name</label>
           <input type="text" name="name" onChange={handleInputChange} />
+          <label>Product Description</label>
           <input type="text" name="desc" onChange={handleInputChange} />
           <label className="label">Product category</label>
           <select id="category" name="category" onChange={handleInputChange}>
@@ -71,9 +73,9 @@ const AddProduct = () => {
           <label className="label">Product Image</label>
           <input type="file" accept=".jpeg, .png" onChange={handleFileChange} />
           <label className="label">Product quantity</label>
-          <input type="text" name="quantity" onChange={handleInputChange}/>
+          <input type="number" name="quantity" onChange={handleInputChange}/>
           <label className="label">Product price</label>
-          <input type="text" name="price" onChange={handleInputChange} />
+          <input type="number" name="price" onChange={handleInputChange} />
           <button type="submit" className="add" onClick={handleFormSubmit}>
             Add product
           </button>

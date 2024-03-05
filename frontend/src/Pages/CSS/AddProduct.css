@@ -40,6 +40,17 @@
     color: #5c5c5c;
     font-size: 18px;
 }
+.addproduct-fields button{
+    width: 580px;
+    height: 72px;
+    color: white;
+    background:  #009fc7;
+    margin-top: 30px;
+    border: none;
+    font-size: 24px;
+    font-weight: 500;
+    cursor: pointer;
+}
 .product-submit{
     display: flex;
     justify-content: space-between;
