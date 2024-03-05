@@ -18,11 +18,13 @@ function App() {
       <BrowserRouter>
         <Navbar></Navbar>
         <Routes>
+        
           <Route path='/' element={<Shop/>}/>
           <Route path='/Men' element={<ShopCategory  banner ={men_banner} category = "men"/>}/>
           <Route path='/Women' element={< ShopCategory banner ={women_banner} category = "women"/>}/>
           <Route path='/Kids' element={<ShopCategory banner ={kid_banner} category = "kid"/>}/>
           <Route path='/product' element={<Product/>}/>
+          <Route path='/manageproducts' element = {<ManageProducts/>}/>
             <Route path='/product/:id' element = {<Product/>}/>
             <Route path='/cart' element = {<Cart/>}/>
             <Route path='/signup' element = {<LoginSignup/>}/>
