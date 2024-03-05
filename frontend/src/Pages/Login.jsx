@@ -8,7 +8,7 @@ import React, { useState, useContext } from "react";
 import { ShopContext } from "../Context/ShopContext";
 import "./CSS/Login.css";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+
 const Login = () => {
   const { email, password, setEmail, setPassword, login } =
     useContext(ShopContext);

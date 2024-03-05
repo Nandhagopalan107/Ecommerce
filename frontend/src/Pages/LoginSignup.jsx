@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useState, useContext,useNavigate } from "react";
 import { ShopContext } from "../Context/ShopContext";
-import { useNavigate } from "react-router-dom";
 const LoginSignup = () => {
   const navigate = useNavigate();
   const { username,email,password,setUsername,setPassword,setEmail, login } = useContext(ShopContext);
