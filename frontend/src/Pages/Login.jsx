@@ -27,12 +27,7 @@ const Login = () => {
 
       console.log(response.data);
       login();
-<<<<<<< HEAD
       navigate('/')
-=======
-      navigate("/");
-      alert("logged in successfully");
->>>>>>> e7cf8c066404ed599a1d75ebcd2c2e85aed40ee4
     } catch (error) {
       console.error("Error during login:", error.message);
     }
