@@ -53,6 +53,7 @@ const ShopContextProvider = (props) => {
           cartContents.push({
             product,
             quantity,
+            email
           });
         }
       }
