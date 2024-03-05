@@ -1,6 +1,6 @@
 import React,{ useContext } from 'react'
 import { ShopContext } from '../Context/ShopContext';
- import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Breadcrums from '../Components/Breadcrums/Breadcrums';
 import ProductDisplay from '../Components/ProductDisplay/ProductDisplay';
 import Description from '../Components/Description/Description';
