@@ -35,17 +35,21 @@ const AddProduct = () => {
       formData.append("description", productData.desc);
       formData.append("category", productData.category);
       
-      formData.append("quantity", productData.quantity);
-      formData.append("price", productData.price);
+      formData.append("quantity", parseInt(productData.quantity));
+      formData.append("price", parseFloat(productData.price));
       for (const [key, value] of formData.entries()) {
         console.log(`${key}: ${value}`);
     }
 
       // // Adjust the URL according to your backend endpoint
       const response = await axios.post(
-        "http://localhost:8080/addnewproduct",
-        formData,
-        
+        "http://localhost:8080/addnewproduct",{
+          productName:productData.name,
+          description:productData.desc,
+          category:productData.category,
+          quantity:parseInt(productData.quantity),
+          price:parseFloat(productData.price)
+      }  
       );
 
       // console.log(response.data); // Handle the response as needed
@@ -67,9 +71,9 @@ const AddProduct = () => {
             <option value="" disabled>
               Select a category
             </option>
-            <option>Men</option>
-            <option>Women</option>
-            <option>Kids</option>
+            <option>men</option>
+            <option>women</option>
+            <option>kids</option>
 
           </select>
           
