@@ -32,16 +32,19 @@ const AddProduct = () => {
 
     try {
       const formData = new FormData();
-      formData.append("name", productData.name);
-      formData.append("desc", productData.desc);
+      formData.append("productName", productData.name);
+      formData.append("description", productData.desc);
       formData.append("category", productData.category);
-      formData.append("image", productData.image);
+      formData.append("filepath", productData.image);
       formData.append("quantity", productData.quantity);
       formData.append("price", productData.price);
+      for (const [key, value] of formData.entries()) {
+        console.log(`${key}: ${value}`);
+    }
 
-      // Adjust the URL according to your backend endpoint
+      // // Adjust the URL according to your backend endpoint
       const response = await axios.post(
-        "http://localhost:8080/api/products/add",
+        "http://localhost:8080/addnewproduct",
         formData,
         {
           headers: {
@@ -50,7 +53,7 @@ const AddProduct = () => {
         }
       );
 
-      console.log(response.data); // Handle the response as needed
+      // console.log(response.data); // Handle the response as needed
     } catch (error) {
       console.error("Error adding product:", error.message);
     }
@@ -69,6 +72,10 @@ const AddProduct = () => {
             <option value="" disabled>
               Select a category
             </option>
+            <option>Men</option>
+            <option>Women</option>
+            <option>Kids</option>
+
           </select>
           <label className="label">Product Image</label>
           <input type="file" accept=".jpeg, .png" onChange={handleFileChange} />

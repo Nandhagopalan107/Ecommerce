@@ -10,19 +10,19 @@ const Login = () => {
     useContext(ShopContext);
 
 
+
   const handleLogin = async (e) => {
     e.preventDefault();
 
     try {
-      // const response = await axios.post("http://localhost:8080/login", {
-      //   email: email,
-      //   pwd: password,
-      // });
+      const response = await axios.post("http://localhost:8080/login", {
+        email: email,
+        pwd: password,
+      });
 
-      // console.log(response.data);
-      setEmail("vj@gmail.com");
-      setLoggedIn(true);
-      // login();
+      console.log(response.data);
+      login();
+      
     } catch (error) {
       console.error("Error during login:", error.message);
     }
