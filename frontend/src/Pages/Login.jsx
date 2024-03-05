@@ -12,7 +12,6 @@ import { useNavigate } from "react-router-dom";
 const Login = () => {
   const { email, password, setEmail, setPassword, login } =
     useContext(ShopContext);
-  const navigate = useNavigate();
 
   const navigate =useNavigate();
 
