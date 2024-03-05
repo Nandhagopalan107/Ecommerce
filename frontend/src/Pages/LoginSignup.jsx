@@ -11,11 +11,11 @@ const LoginSignup = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:5000/register", {
-        username,
-        email,
-        password,
-      });
+      const response = await axios.post("http://localhost:8080/register", {
+        email:email,
+        pwd:password,
+        fname:username
+  });
 
       console.log(response.data.message);
       login();
