@@ -1,19 +1,14 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Link,
-  useNavigate,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Link } from "react-router-dom";
 import React, { useState, useContext } from "react";
 import { ShopContext } from "../Context/ShopContext";
 import "./CSS/Login.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const { email, password, setEmail, setPassword, login } =
     useContext(ShopContext);
 
-  const navigate =useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -26,7 +21,6 @@ const Login = () => {
 
       console.log(response.data);
       login();
-      navigate('/')
     } catch (error) {
       console.error("Error during login:", error.message);
     }
