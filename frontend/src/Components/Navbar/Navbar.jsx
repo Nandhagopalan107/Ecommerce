@@ -17,7 +17,7 @@ const Navbar = () => {
         />
         <p>CooperKart</p>
       </div>
-      <ul className="nav-menu">
+     { (email==="admin@cooperkart.com") ? null: <ul className="nav-menu">
         <li
           onClick={() => {
             setMenu("shop");
@@ -63,7 +63,9 @@ const Navbar = () => {
           {menu === "Kids" ? <hr /> : <></>}
         </li>
       </ul>
-
+     
+     
+      }
       <div className="nav-login-cart">
         {isLoggedIn ? (
           email === "admin@cooperkart.com" ? (

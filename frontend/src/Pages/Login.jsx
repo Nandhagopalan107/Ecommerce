@@ -8,10 +8,12 @@ import React, { useState, useContext } from "react";
 import { ShopContext } from "../Context/ShopContext";
 import "./CSS/Login.css";
 import axios from "axios";
+
 const Login = () => {
   const { email, password, setEmail, setPassword, login } =
     useContext(ShopContext);
-  const navigate = useNavigate();
+
+  const navigate =useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -24,8 +26,7 @@ const Login = () => {
 
       console.log(response.data);
       login();
-      navigate("/");
-      alert("logged in successfully");
+      navigate('/')
     } catch (error) {
       console.error("Error during login:", error.message);
     }
