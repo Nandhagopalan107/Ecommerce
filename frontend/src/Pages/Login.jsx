@@ -6,7 +6,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const { email, password, setEmail, setPassword, login } =
+  const { email, password, setEmail, setPassword, login ,setLoggedIn} =
     useContext(ShopContext);
 
 
@@ -14,13 +14,15 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:8080/login", {
-        email: email,
-        pwd: password,
-      });
+      // const response = await axios.post("http://localhost:8080/login", {
+      //   email: email,
+      //   pwd: password,
+      // });
 
-      console.log(response.data);
-      login();
+      // console.log(response.data);
+      setEmail("vj@gmail.com");
+      setLoggedIn(true);
+      // login();
     } catch (error) {
       console.error("Error during login:", error.message);
     }

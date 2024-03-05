@@ -21,9 +21,9 @@ const ShopContextProvider = (props) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
   };
 
-  const [isLoggedIn, setLoggedIn] = useState(true);
+  const [isLoggedIn, setLoggedIn] = useState(false);
   const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState("admin@cooperkart.com");
   const [password, setPassword] = useState("");
 
   const login = () => {
@@ -65,9 +65,9 @@ const ShopContextProvider = (props) => {
   const getTotalCartAmount = () => {
     let totalAmount = 0;
     all_product.map((e) => {
-      if (cartItems[e.id] > 0) {
+      
+      if (cartItems[e.id] > 0) 
         totalAmount += e.new_price * Number(cartItems[e.id]);
-      }
     });
 
     return totalAmount;
@@ -99,6 +99,7 @@ const ShopContextProvider = (props) => {
     setEmail,
     setUsername,
     setPassword,
+    setLoggedIn
   };
 
   return (

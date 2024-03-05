@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Navbar.css";
 import logo from "../Assets/logo.png";
 import cart_icon from "../Assets/cart_icon.png";
@@ -6,7 +6,8 @@ import { Link } from "react-router-dom";
 import { ShopContext } from "../../Context/ShopContext";
 const Navbar = () => {
   const [menu, setMenu] = useState("shop");
-  const { getTotalCartItems, email, isLoggedIn,logout } = useContext(ShopContext);
+  const { getTotalCartItems, email, isLoggedIn,logout,setLoggedIn } = useContext(ShopContext);
+  
 
   return (
     <div className="navbar">
@@ -67,9 +68,10 @@ const Navbar = () => {
      
       }
       <div className="nav-login-cart">
-        {isLoggedIn ? (
-          email === "admin@cooperkart.com" ? (
+        {email ?(
+          email == "admin@cooperkart.com" ? (
             <>
+            {console.log(email)}
               <Link style={{ textDecoration: "none" }} to="/manageproducts">
                 {" "}
                 <button>Manage products</button>
@@ -82,7 +84,7 @@ const Navbar = () => {
             <>
               <Link style={{ textDecoration: "none" }} to="/signup">
                 {" "}
-                <button onClick={logout()}>Logout</button>
+                <button onClick={logout}>Logout</button>
               </Link>
               <Link style={{ textDecoration: "none" }} to="/cart">
                 <img src={cart_icon} alt="" />{" "}

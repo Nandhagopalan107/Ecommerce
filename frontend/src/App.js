@@ -19,7 +19,7 @@ function App() {
   return (
     <div >
       <BrowserRouter>
-        <Navbar></Navbar>
+        <Navbar />
         <Routes>
        
           <Route path='/' element={<Shop/>}/>
