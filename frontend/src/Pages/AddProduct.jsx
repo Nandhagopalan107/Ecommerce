@@ -1,14 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './CSS/AddProduct.css'
 import axios from 'axios';
+import ex_img from '../Components/Assets/product_21.png'
 import { useState } from 'react';
+import { ShopContext } from '../Context/ShopContext';
 const AddProduct = () => {
+  const { all_product} = useContext(ShopContext);
   const [productData, setProductData] = useState({
+    id: 37,
     name: "",
     desc: "",
     category: "",
     quantity: "",
     price: "",
+    new_price: "",
+    old_price: 80.5,
   });
 
   const handleFileChange = (event) => {
@@ -52,6 +58,10 @@ const AddProduct = () => {
       }  
       );
 
+      all_product.push(productData);
+      console.log(all_product)
+
+      
       // console.log(response.data); // Handle the response as needed
     } catch (error) {
       console.error("Error adding product:", error.message);
