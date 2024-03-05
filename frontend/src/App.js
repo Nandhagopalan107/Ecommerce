@@ -11,6 +11,11 @@ import men_banner from './Components/Assets/banner_mens.png'
 import women_banner from './Components/Assets/banner_women.png'
 import kid_banner from './Components/Assets/banner_kids.png'
 import Login from './Pages/Login';
+import React from 'react';
+import ManageProducts from './Pages/ManageProducts';
+
+
+
 
 function App() {
   return (
