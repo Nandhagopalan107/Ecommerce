@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { ShopContext } from "../../Context/ShopContext";
 const Navbar = () => {
   const [menu, setMenu] = useState("shop");
-  const { getTotalCartItems, email, isLoggedIn } = useContext(ShopContext);
+  const { getTotalCartItems, email, isLoggedIn,logout } = useContext(ShopContext);
 
   return (
     <div className="navbar">
@@ -80,7 +80,7 @@ const Navbar = () => {
             <>
               <Link style={{ textDecoration: "none" }} to="/signup">
                 {" "}
-                <button>Logout</button>
+                <button onClick={logout()}>Logout</button>
               </Link>
               <Link style={{ textDecoration: "none" }} to="/cart">
                 <img src={cart_icon} alt="" />{" "}
