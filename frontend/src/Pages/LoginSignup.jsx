@@ -2,22 +2,23 @@ import React from "react";
 import "./CSS/LoginSignup.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { useState, useContext } from "react";
+import { useState, useContext,useNavigate } from "react";
 import { ShopContext } from "../Context/ShopContext";
 const LoginSignup = () => {
+  const navigate = useNavigate();
   const { username,email,password,setUsername,setPassword,setEmail, login } = useContext(ShopContext);
 
   const handleRegister = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:8080/register", {
+      const response = await axios.post("http://localhost:8080/registration", {
         email:email,
         pwd:password,
         fname:username
   });
 
-      console.log(response.data.message);
+      console.log(response.data);
       login();
     } catch (error) {
       console.error("Error during registration:", error.message);
