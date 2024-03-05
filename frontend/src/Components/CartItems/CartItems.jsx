@@ -4,7 +4,7 @@ import { ShopContext } from '../../Context/ShopContext'
 import remove_icon from '../Assets/cart_cross_icon.png'
 const CartItems = () => {
 
-const {all_product,cartItems,removeFromCart,getTotalCartAmount} = useContext(ShopContext);
+const {all_product,cartItems,removeFromCart,getTotalCartAmount,getCartContents} = useContext(ShopContext);
 
   return (
     <div className='cartitems'>
@@ -22,7 +22,7 @@ const {all_product,cartItems,removeFromCart,getTotalCartAmount} = useContext(Sho
                
                 if(cartItems[e.id]>0)
                 {
-                  return  <div>
+                  return  <div key={e.id}>
                         <div className="cartitems-format cartitems-format-main">
                           
                             <img src={e.image} alt="" className='cartitems-product-icon' />
@@ -30,7 +30,7 @@ const {all_product,cartItems,removeFromCart,getTotalCartAmount} = useContext(Sho
                             <p>Rs.{e.new_price}</p>
                             <button className='cartitems-quantity'>{cartItems[e.id]}</button>
                             <p>Rs.{e.new_price*cartItems[e.id]}</p>
-                            <img className="cartitems-remove-icon" src={remove_icon} onClick={()=>{removeFromCart(e.id)}} alt="" srcset="" />
+                            <img className="cartitems-remove-icon" src={remove_icon} onClick={()=>{removeFromCart(e.id)}} alt="" srcSet="" />
                         </div>
                         <hr/>
                   </div>
@@ -59,7 +59,7 @@ const {all_product,cartItems,removeFromCart,getTotalCartAmount} = useContext(Sho
                         <h3>Rs.{getTotalCartAmount()}</h3>
                     </div>
                 </div>
-                <button>PROCEED TO CHECKOUT</button>
+                <button onClick={()=>getCartContents()}>PROCEED TO CHECKOUT</button>
             </div>
         
             <div className='cartitems-promocode'>
