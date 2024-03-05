@@ -7,7 +7,6 @@ const AddProduct = () => {
     name: "",
     desc: "",
     category: "",
-    image: null,
     quantity: "",
     price: "",
   });
@@ -35,7 +34,7 @@ const AddProduct = () => {
       formData.append("productName", productData.name);
       formData.append("description", productData.desc);
       formData.append("category", productData.category);
-      formData.append("filepath", productData.image);
+      
       formData.append("quantity", productData.quantity);
       formData.append("price", productData.price);
       for (const [key, value] of formData.entries()) {
@@ -46,11 +45,7 @@ const AddProduct = () => {
       const response = await axios.post(
         "http://localhost:8080/addnewproduct",
         formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
+        
       );
 
       // console.log(response.data); // Handle the response as needed
@@ -77,8 +72,7 @@ const AddProduct = () => {
             <option>Kids</option>
 
           </select>
-          <label className="label">Product Image</label>
-          <input type="file" accept=".jpeg, .png" onChange={handleFileChange} />
+          
           <label className="label">Product quantity</label>
           <input type="number" name="quantity" onChange={handleInputChange}/>
           <label className="label">Product price</label>
