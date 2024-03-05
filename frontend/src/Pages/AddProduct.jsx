@@ -25,7 +25,7 @@ const AddProduct = () => {
           <input type="text" name="quantity"/><br></br>
           <label className="label">Product price</label>
           <input type="text"  name="price"/><br></br>
-          <button type="submit" className="add">
+          <button type="submit" className="add" class="product-submit">
             Add product
           </button><br></br>
         </div>
