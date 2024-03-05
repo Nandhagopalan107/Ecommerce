@@ -33,6 +33,9 @@ const ShopContextProvider = (props) => {
   const logout = () => {
     setLoggedIn(false);
     setCartItems(getDefaultCart());
+    setEmail("")
+    setPassword("")
+    setUsername("")
   };
 
   const getCartContents = () => {
