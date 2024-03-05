@@ -14,12 +14,6 @@ import Login from './Pages/Login';
 import React from 'react';
 import ManageProducts from './Pages/ManageProducts';
 import AddProduct from './Pages/AddProduct';
-<<<<<<< HEAD
-=======
- 
- 
- 
->>>>>>> 9fc8d6cab3b0508bf2f355a04bb080c544456b32
  
 function App() {
   return (
