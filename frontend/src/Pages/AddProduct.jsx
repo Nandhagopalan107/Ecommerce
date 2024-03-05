@@ -11,13 +11,9 @@ const AddProduct = () => {
     name: "",
     desc: "",
     category: "",
-<<<<<<< HEAD
-    image: '' ,
-=======
->>>>>>> 385743071f054882a998abf108629fddfdd17ea8
     quantity: "",
     price: "",
-    new_price: 50.0,
+    new_price: "",
     old_price: 80.5,
   });
 
@@ -44,10 +40,7 @@ const AddProduct = () => {
       formData.append("productName", productData.name);
       formData.append("description", productData.desc);
       formData.append("category", productData.category);
-<<<<<<< HEAD
-=======
       
->>>>>>> 385743071f054882a998abf108629fddfdd17ea8
       formData.append("quantity", productData.quantity);
       formData.append("price", productData.price);
       for (const [key, value] of formData.entries()) {
@@ -55,23 +48,11 @@ const AddProduct = () => {
     }
 
       // // Adjust the URL according to your backend endpoint
-<<<<<<< HEAD
-      // const response = await axios.post(
-      //   "http://localhost:8080/addnewproduct",
-      //   formData,
-      //   {
-      //     headers: {
-      //       "Content-Type": "multipart/form-data",
-      //     },
-      //   }
-      // );
-=======
       const response = await axios.post(
         "http://localhost:8080/addnewproduct",
         formData,
         
       );
->>>>>>> 385743071f054882a998abf108629fddfdd17ea8
 
       all_product.push(productData);
       console.log(all_product)
@@ -101,10 +82,7 @@ const AddProduct = () => {
             <option>kids</option>
 
           </select>
-<<<<<<< HEAD
-=======
           
->>>>>>> 385743071f054882a998abf108629fddfdd17ea8
           <label className="label">Product quantity</label>
           <input type="number" name="quantity" onChange={handleInputChange}/>
           <label className="label">Product price</label>
