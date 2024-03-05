@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useState, useContext,useNavigate } from "react";
 import { ShopContext } from "../Context/ShopContext";
+import { useNavigate } from "react-router-dom";
 const LoginSignup = () => {
   const navigate = useNavigate();
   const { username,email,password,setUsername,setPassword,setEmail, login } = useContext(ShopContext);
@@ -20,6 +21,8 @@ const LoginSignup = () => {
 
       console.log(response.data);
       login();
+      alert('registered successfully')
+      navigate('/');
     } catch (error) {
       console.error("Error during registration:", error.message);
     }

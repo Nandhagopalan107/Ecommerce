@@ -1,11 +1,18 @@
-import { BrowserRouter as Router, Routes, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Link,
+  useNavigate,
+} from "react-router-dom";
 import React, { useState, useContext } from "react";
 import { ShopContext } from "../Context/ShopContext";
 import "./CSS/Login.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 const Login = () => {
-  const { email,password,setEmail,setPassword, login } = useContext(ShopContext);
+  const { email, password, setEmail, setPassword, login } =
+    useContext(ShopContext);
+  const navigate = useNavigate();
 
   const navigate =useNavigate();
 
@@ -14,13 +21,18 @@ const Login = () => {
 
     try {
       const response = await axios.post("http://localhost:8080/login", {
-        email:email,
-        pwd:password,
+        email: email,
+        pwd: password,
       });
 
       console.log(response.data);
       login();
+<<<<<<< HEAD
       navigate('/')
+=======
+      navigate("/");
+      alert("logged in successfully");
+>>>>>>> e7cf8c066404ed599a1d75ebcd2c2e85aed40ee4
     } catch (error) {
       console.error("Error during login:", error.message);
     }
