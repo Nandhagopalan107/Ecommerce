@@ -10,12 +10,12 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:5000/login", {
-        email,
-        password,
+      const response = await axios.post("http://localhost:8080/login", {
+        email:email,
+        pwd:password,
       });
 
-      console.log(response.data.message);
+      console.log(response.data);
       login();
     } catch (error) {
       console.error("Error during login:", error.message);
